@@ -31,6 +31,11 @@ def get_loss(model, ref_model, inputs, loss_type, beta=0.1):
         regularization_loss = 0
         return forget_loss, regularization_loss
 
+    if 'UNIDIAL' in loss_type:
+        forget_loss = unidial_loss(model, ref_model, inputs, strength=10.0)
+        regularization_loss = 0
+        return forget_loss, regularization_loss
+
     # forget_loss
     if 'GA' in loss_type:
         forget_loss = ga_loss(model, inputs)
@@ -44,6 +49,8 @@ def get_loss(model, ref_model, inputs, loss_type, beta=0.1):
     # regularization_loss
     if 'GD' in loss_type:
         regularization_loss = gd_loss(model, inputs)
+    elif 'KL' in loss_type:
+        regularization_loss = kl_loss(model, ref_model, inputs)
     else:
         regularization_loss = 0
     
@@ -85,6 +92,23 @@ def gd_loss(model, inputs):
     outputs = model(input_ids, labels=labels,
                     attention_mask=attention_mask)
     loss = outputs.loss
+    return loss
+
+# Regularization Loss: KL
+def kl_loss(model, ref_model, inputs):
+    retain_inputs = inputs[1]
+    input_ids, labels, attention_mask = retain_inputs
+
+    outputs = model(input_ids, labels=labels, attention_mask=attention_mask)
+    probs = F.log_softmax(outputs.logits, dim=-1).view(-1, outputs.logits.shape[-1])
+
+    with torch.no_grad():
+        outputs_ref = ref_model(input_ids, labels=labels, attention_mask=attention_mask)
+    ref_probs = F.log_softmax(outputs_ref.logits, dim=-1).view(-1, outputs_ref.logits.shape[-1])
+
+    loss = nn.functional.kl_div(
+        probs, ref_probs, reduction='batchmean', log_target=True)
+
     return loss
 
 
@@ -252,3 +276,32 @@ def sga_loss(model, inputs, threshold=0.7, top_k=1):
     # GA => -CE
     loss = -final_ce
     return loss
+
+def unidial_loss(model, unlearn_teacher_model, inputs, strength=10.0):
+    input_ids, labels, attention_mask = inputs[0]  # forget set만 사용
+    student_logits = model(input_ids=input_ids, attention_mask=attention_mask).logits
+    with torch.no_grad():
+        teacher_logits = unlearn_teacher_model(input_ids=input_ids, attention_mask=attention_mask).logits
+
+    # Shift for causal LM
+    shift_labels = input_ids[..., 1:].contiguous()
+    shift_student_logits = student_logits[..., :-1, :].contiguous()
+    shift_teacher_logits = teacher_logits[..., :-1, :].contiguous()
+
+    # Create mask for memorized tokens
+    mask = torch.zeros_like(shift_student_logits)
+    batch_indices = torch.arange(mask.shape[0]).view(-1, 1, 1)
+    seq_indices = torch.arange(mask.shape[1]).view(1, -1, 1)
+    mask[batch_indices, seq_indices, shift_labels.unsqueeze(-1)] = 1
+
+    # Penalize memorized tokens in teacher logits and get soft labels
+    pre_softmax = shift_teacher_logits - strength * mask
+    soft_label = F.softmax(pre_softmax, dim=-1)
+
+    # Cross-entropy loss between student logits and soft teacher labels
+    loss_fct = nn.CrossEntropyLoss(reduction='none')
+    loss = loss_fct(
+        shift_student_logits.view(-1, shift_student_logits.size(-1)),
+        soft_label.view(-1, soft_label.size(-1))
+    )
+    return loss.mean()

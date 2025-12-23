@@ -1,0 +1,5 @@
+[2025-12-13 16:40:07,041][absl][INFO] - Using default tokenizer.
+[2025-12-13 23:07:35,218][sentence_transformers.SentenceTransformer][INFO] - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+[2025-12-14 12:39:55,435][absl][INFO] - Using default tokenizer.
+[2025-12-14 12:59:22,125][absl][INFO] - Using default tokenizer.
+[2025-12-14 13:03:15,360][absl][INFO] - Using default tokenizer.

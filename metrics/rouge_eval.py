@@ -87,7 +87,7 @@ def trans(input_file, tokenizer, prompt_size, gt_size):
 def rouge_forget_score(cfg, unlearn_times, model, tokenizer):
     gt_size = 128
 
-    data = read_json(f"data/Prof/eval/verbatim.json")    
+    data = read_json(f"data/Prof/eval/verbatim_full.json")    
 
     agg, log = eval_rouge(
                         prompts=[d['prompt'] for d in data],

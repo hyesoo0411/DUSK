@@ -144,7 +144,7 @@ def main(cfg):
         save_only_model=True,
         ddp_find_unused_parameters=False,
         weight_decay=cfg.weight_decay,
-        evaluation_strategy="no",
+        # evaluation_strategy="no",
     )
 
     # for continual unlearning, load the target model from last task

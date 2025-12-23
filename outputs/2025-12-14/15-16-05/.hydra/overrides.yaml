@@ -1,0 +1,15 @@
+- task_id=1
+- eval_unlearn_step=last
+- use_LoRA=false
+- forget_coeff=1.0
+- regularization_coeff=1.0
+- lr=1e-5
+- forget_loss=NONE+GD
+- num_epochs=5
+- model_path=Qwen/Qwen2.5-7B
+- fix_ref_model=
+- save_root=results_D1/retrain
+- save_checkpoint=true
+- forget_type=formats
+- num_formats=5
+- model_family=qwen2.5-7b

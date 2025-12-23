@@ -1,0 +1,30 @@
+model_family: qwen2.5-3b
+model_path: Qwen/Qwen2.5-3B
+use_LoRA: false
+LoRA:
+  r: 8
+  alpha: 32
+  dropout: 0.05
+forget_data: Prof
+data_path: data/Prof
+task_id: 1
+forget_loss: NONE+GD
+lr: 1.0e-05
+num_epochs: 5
+batch_size: 4
+gradient_accumulation_steps: 4
+forget_coeff: 1.0
+regularization_coeff: 1.0
+forget_type: formats
+num_formats: 5
+beta: 0.1
+weight_decay: 0.01
+fix_ref_model: ''
+seed: 1001
+save_checkpoint: true
+overwrite_dir: false
+save_steps: last
+save_root: results_D1/retrain
+save_dir: ${save_root}/${model_family}/${forget_loss}/seed_${seed}/epoch${num_epochs}_${lr}_task${forget_type}_${num_formats}
+ds_size: 300
+eval_unlearn_step: last

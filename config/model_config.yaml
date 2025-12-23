@@ -5,3 +5,35 @@ llama3-8b:
   answer_tag: ""
   flash_attention2: "true"
   gradient_checkpointing: "true"
+
+qwen2.5-3b:
+  hf_key: "Qwen/Qwen2.5-3B"
+  question_start_tag: "<|im_start|>user\n"
+  question_end_tag: "<|im_end|>\n<|im_start|>assistant\n"
+  answer_tag: ""
+  flash_attention2: "true"
+  gradient_checkpointing: "true"
+
+qwen2.5-7b:
+  hf_key: "Qwen/Qwen2.5-7B"
+  question_start_tag: "<|im_start|>user\n"
+  question_end_tag: "<|im_end|>\n<|im_start|>assistant\n"
+  answer_tag: ""
+  flash_attention2: "true"
+  gradient_checkpointing: "true"
+
+qwen2.5-14b:
+  hf_key: "Qwen/Qwen2.5-14B"
+  question_start_tag: "<|im_start|>user\n"
+  question_end_tag: "<|im_end|>\n<|im_start|>assistant\n"
+  answer_tag: ""
+  flash_attention2: "true"
+  gradient_checkpointing: "true"
+
+gemma-3-12b-it:
+  hf_key: "google/gemma-3-12b-it"
+  question_start_tag: "<bos><start_of_turn>user\n"
+  question_end_tag: "<end_of_turn>\n<start_of_turn>model\n"
+  answer_tag: ""
+  flash_attention2: "true"
+  gradient_checkpointing: "true"

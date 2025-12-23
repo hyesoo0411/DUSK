@@ -1,0 +1,145 @@
+{
+  "os": "Linux-5.15.0-143-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.10.16",
+  "startedAt": "2025-12-13T05:50:45.389751Z",
+  "args": [
+    "--config-name=dusk.yaml",
+    "task_id=1",
+    "save_steps=last",
+    "use_LoRA=false",
+    "forget_coeff=1.0",
+    "regularization_coeff=1.0",
+    "lr=1e-5",
+    "forget_loss=NONE+GD",
+    "num_epochs=5",
+    "model_path=Qwen/Qwen2.5-3B-Instruct",
+    "fix_ref_model=",
+    "save_root=results_D1/retrain",
+    "save_checkpoint=true",
+    "forget_type=formats",
+    "num_formats=5",
+    "model_family=qwen2.5-3b-instruct"
+  ],
+  "program": "/home/hyesoo/DUSK/forget.py",
+  "codePath": "forget.py",
+  "codePathLocal": "forget.py",
+  "git": {
+    "remote": "https://github.com/AI-ISL/DUSK.git",
+    "commit": "129a0a57492be44c0a327968de33928a7c2fa4dc"
+  },
+  "email": "hyesoo.hong@yonsei.ac.kr",
+  "root": "/home/hyesoo/DUSK",
+  "host": "yisl-L40S",
+  "executable": "/home/hyesoo/anaconda3/envs/tofu/bin/python",
+  "cpu_count": 96,
+  "cpu_count_logical": 192,
+  "gpu": "NVIDIA L40S",
+  "gpu_count": 8,
+  "disk": {
+    "/": {
+      "total": "3696891609088",
+      "used": "3064050524160"
+    }
+  },
+  "memory": {
+    "total": "1081840693248"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-d5ad1718-b351-e533-c3ff-75d6c0f15da1"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-071982cc-005b-2e8d-731c-e125a202fae4"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-2b22051d-9b94-a59c-5ea8-7cabd361b432"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-a367e1aa-fcba-6357-c27a-96f066c1ee84"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-0de11c01-5041-d3a8-f955-fcd5e3c89d09"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-38473b4e-07e6-dbd0-9bf1-7af286b708a2"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-ed279326-606e-f0b7-2632-a5dad1895d97"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-159fc74c-b337-5cc6-3957-a924f37fcec2"
+    }
+  ],
+  "cudaVersion": "12.4",
+  "slurm": {
+    "cluster_name": "yisl",
+    "conf": "/usr/local/etc/slurm.conf",
+    "cpus_on_node": "64",
+    "cpus_per_task": "8",
+    "gpus_on_node": "2",
+    "gtids": "0",
+    "job_cpus_per_node": "64",
+    "job_end_time": "1765691414",
+    "job_gid": "1003",
+    "job_gpus": "0,1",
+    "job_id": "19476",
+    "job_name": "ft_retrain",
+    "job_nodelist": "yisl-L40S",
+    "job_num_nodes": "1",
+    "job_partition": "l40s",
+    "job_start_time": "1765605014",
+    "job_uid": "1003",
+    "job_user": "hyesoo",
+    "jobid": "19476",
+    "localid": "0",
+    "mem_per_node": "32768",
+    "nnodes": "1",
+    "nodeid": "0",
+    "nodelist": "yisl-L40S",
+    "nprocs": "8",
+    "ntasks": "8",
+    "ntasks_per_node": "8",
+    "prio_process": "0",
+    "procid": "0",
+    "submit_dir": "/home/hyesoo/DUSK",
+    "submit_host": "yisl-L40S",
+    "task_pid": "422266",
+    "tasks_per_node": "8",
+    "topology_addr": "yisl-L40S",
+    "topology_addr_pattern": "node",
+    "tres_per_task": "cpu:8"
+  },
+  "writerId": "dif0d2lpvwhvd4xq40xrpkei69jur6ha"
+}

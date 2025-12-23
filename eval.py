@@ -75,10 +75,10 @@ def main(cfg):
     rouge_forget_score(cfg, unlearn_times, model, tokenizer)
     
     # Evaluation of General QA
-    qa_general_eval_score(cfg, unlearn_times, model, tokenizer) 
+    qa_general_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg) 
     
     # Evaluation of Specific QA
-    qa_specific_eval_score(cfg, unlearn_times, model, tokenizer) 
+    qa_specific_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg) 
 
     # MIA Evaluation
     _, _, _, auc = mia_eval_score(cfg, unlearn_times, model, tokenizer)
@@ -105,9 +105,9 @@ def main(cfg):
         json.dump(out, f, indent=4)
 
     # Do not save checkpoint at last step for memory efficiency
-    #if unlearn_times == len(task_list) and not cfg.save_checkpoint:
-    #    if (os.path.exists(curr_checkpoint_dir)) and (cfg.eval_unlearn_step != 0):
-    #        shutil.rmtree(curr_checkpoint_dir)
+    if unlearn_times == len(task_list) and not cfg.save_checkpoint:
+       if (os.path.exists(curr_checkpoint_dir)) and (cfg.eval_unlearn_step != 0):
+           shutil.rmtree(curr_checkpoint_dir)
 
 
 if __name__ == "__main__":

@@ -84,10 +84,10 @@ def write_json(obj: Dict | List, fpath: str):
     with open(fpath, 'w') as f:
         return json.dump(obj, f)
     
-def qa_general_eval_score(cfg, unlearn_times, model, tokenizer): 
+def qa_general_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg): 
 
     data_icl = read_json(f"data/Prof/eval/icl.jsonl")
-    data = read_json(f"data/Prof/eval/GeneralQA.jsonl")
+    data = read_json(f"data/Prof/eval/GeneralFullQA.jsonl")
     
     curr_save_dir = os.path.join(cfg.save_dir, f"unlearn_times_{unlearn_times}")
     curr_eval_dir = os.path.join(curr_save_dir, f'eval_results-{cfg.eval_unlearn_step}')
@@ -98,6 +98,7 @@ def qa_general_eval_score(cfg, unlearn_times, model, tokenizer):
             answers=[d['answer'] for d in data],
             icl_qs=[d['question'] for d in data_icl],
             icl_as=[d['answer'] for d in data_icl],
+            model_cfg=model_cfg,
             model=model, tokenizer=tokenizer,
             max_new_tokens=32
         )
@@ -105,13 +106,13 @@ def qa_general_eval_score(cfg, unlearn_times, model, tokenizer):
     write_json(log, os.path.join(curr_eval_dir, "qa/qa_general_log.json"))
 
     
-def qa_specific_eval_score(cfg, unlearn_times, model, tokenizer):
+def qa_specific_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg):
     curr_save_dir = os.path.join(cfg.save_dir, f"unlearn_times_{unlearn_times}")
     curr_eval_dir = os.path.join(curr_save_dir, f'eval_results-{cfg.eval_unlearn_step}')
     os.makedirs(curr_eval_dir, exist_ok=True)
 
     data_icl = read_json(f"data/Prof/eval/icl.jsonl")
-    data_forget = read_json(f"data/Prof/eval/SpecificForgetQA.jsonl")
+    data_forget = read_json(f"data/Prof/eval/SpecificForgetQA_chrono.jsonl")
 
     agg_forget, log_forget = eval(
             questions=[d['question'] for d in data_forget],
@@ -119,18 +120,20 @@ def qa_specific_eval_score(cfg, unlearn_times, model, tokenizer):
             icl_qs=[d['question'] for d in data_icl],
             icl_as=[d['answer'] for d in data_icl],
             model=model, tokenizer=tokenizer,
+            model_cfg=model_cfg,
             max_new_tokens=32
         )
     write_json(agg_forget, os.path.join(curr_eval_dir, "qa/qa_specific_forget_agg.json"))
     write_json(log_forget, os.path.join(curr_eval_dir, "qa/qa_specific_forget_log.json"))
     
-    data_retain = read_json(f"data/Prof/eval/SpecificRetainQA.jsonl")    
+    data_retain = read_json(f"data/Prof/eval/SpecificRetainQA_chrono.jsonl")    
     agg_retain, log_retain = eval(
             questions=[d['question'] for d in data_retain],
             answers=[d['answer'] for d in data_retain],
             icl_qs=[d['question'] for d in data_icl],
             icl_as=[d['answer'] for d in data_icl],
             model=model, tokenizer=tokenizer,
+            model_cfg=model_cfg,
             max_new_tokens=32
         )
     write_json(agg_retain, os.path.join(curr_eval_dir, "qa/qa_specific_retain_agg.json"))
@@ -148,6 +151,7 @@ def eval(
     model, tokenizer,
     questions: List[str], answers: List[str],
     icl_qs: List[str] = [], icl_as: List[str] = [],
+    model_cfg: Dict = None,
     max_new_tokens : int = 32
 ):
     assert len(questions) == len(answers)
