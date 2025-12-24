@@ -84,7 +84,18 @@ def main(cfg):
     _, _, _, auc = mia_eval_score(cfg, unlearn_times, model, tokenizer)
     out = {}
     if "target" in cfg.model_path:
-        retrain_path = "./results/llama3-8b/NONE+GD/seed_1001/epoch1_1e-05_taskformats_5/1/unlearn_times_1/eval_results-0/mia/MIA_retrain_AUROC.json"
+        # Determine results directory based on forget_data
+        if hasattr(cfg, 'forget_data'):
+            if cfg.forget_data == 'D1':
+                results_dir = "results_D1"
+            elif cfg.forget_data == 'D2':
+                results_dir = "results_D2"
+            elif cfg.forget_data == 'D1D2':
+                results_dir = "results_D1D2"
+        else:
+            results_dir = "results_D1"  # default
+            
+        retrain_path = f"./{results_dir}/retrain/{cfg.model_family}/NONE+GD/seed_1001/epoch1_1e-05_taskformats_5/1/unlearn_times_1/eval_results-0/mia/MIA_retrain_AUROC.json"
 
         with open(retrain_path, "r") as f:
             AUC_RETRAIN = json.load(f)

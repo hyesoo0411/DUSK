@@ -95,12 +95,20 @@ def compute_auroc(scores1, scores2):
 def mia_eval_score(cfg, unlearn_times, model, tokenizer):
     
     prompt_size = 1024
-    
     format_names = ["Chronological", "Interview", "Feature_Story", "Inverted_Pyramid", "Listicle"]
-    forget_data = trans("data/Prof/Chronological.txt", tokenizer, prompt_size)
-    retain_data = []
-    for format_name in format_names[1:]: 
-        retain_data.extend(trans(f"data/Prof/{format_name}.txt", tokenizer, prompt_size))
+    
+    if cfg.forget_data == "D1" or cfg.forget_data == "D1D2":
+        forget_data = trans("data/Prof/Chronological.txt", tokenizer, prompt_size)
+        retain_data = []
+        for format_name in format_names[1:]: 
+            retain_data.extend(trans(f"data/Prof/{format_name}.txt", tokenizer, prompt_size))
+    
+    elif cfg.forget_data == "D2":
+        forget_data = trans("data/Prof/Listicle.txt", tokenizer, prompt_size)
+        retain_data = []
+        for format_name in format_names[:-1]: 
+            retain_data.extend(trans(f"data/Prof/{format_name}.txt", tokenizer, prompt_size))
+    
     holdout_data = trans(f"data/Prof/eval/holdout.txt", tokenizer, prompt_size)
     
     forget_results = mia(model, tokenizer, forget_data, dataset_name="forget")

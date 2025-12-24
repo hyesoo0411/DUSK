@@ -5,7 +5,6 @@
 #SBATCH --gres=gpu:2
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=32G
-#SBATCH --time=24:00:00
 #SBATCH --output=logs/Unlearn_target_%J.out
 #SBATCH --error=logs/Unlearn_target_%J.err
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=ft_target
+#SBATCH --job-name=DUSK_ft_target_D2
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=8
 #SBATCH --gres=gpu:2
@@ -29,51 +29,74 @@ forget_losses=(
 task_list=(1)
 export TASK_LIST=$(IFS=,; echo "${task_list[*]}")
 
-default_epochss=(5)
+default_epochss=(1 2 3 4 5)
 rmu_epochss=(10 20 30 40 50)
 sga_epochss=(5)
 
 lr=1e-5
 use_LoRA=false
-save_root=results_D1/target
+save_root=results_D2/target
 forget_coeff=1.0
 regularization_coeff=1.0
 save_checkpoint=true
 save_steps=last
 forget_type=formats
 num_formats=5
+forget_data=D2
 
 for forget_loss in "${forget_losses[@]}"; do
 
     # model_paths setting
     if [ "$forget_loss" == "NONE+GD" ]; then
-        model_paths=("Qwen/Qwen2.5-3B")
-        model_family="qwen2.5-3b"
+        model_paths=("AI-ISL/DUSK-target")
     else
         model_paths=("AI-ISL/DUSK-target")
     fi
 
     for model_path in "${model_paths[@]}"; do
         # epoch setting
-        epoch_list=("${default_epochss[@]}")
+        if [ "$forget_loss" == "RMU" ]; then
+            epoch_list=("${rmu_epochss[@]}")
+        elif [ "$forget_loss" == "NONE+GD" ]; then
+            epoch_list=(1)
+        elif [ "$forget_loss" == "SGA" ]; then
+            epoch_list=("${sga_epochss[@]}")
+        else
+            epoch_list=("${default_epochss[@]}")
+        fi
 
         for num_epochs in "${epoch_list[@]}"; do
             for task_id in "${task_list[@]}"; do
 
                 COMMON="use_LoRA=$use_LoRA forget_coeff=$forget_coeff regularization_coeff=$regularization_coeff lr=$lr forget_loss=$forget_loss num_epochs=$num_epochs \
-                    model_path=$model_path fix_ref_model=$fix_ref_model save_root=$save_root save_checkpoint=$save_checkpoint forget_type=$forget_type num_formats=$num_formats model_family=$model_family"
+                    model_path=$model_path fix_ref_model=$fix_ref_model save_root=$save_root save_checkpoint=$save_checkpoint forget_type=$forget_type num_formats=$num_formats forget_data=$forget_data"
 
                 # unlearning - forget.py
-                torchrun --nproc_per_node=2 --master_port=$MASTER_PORT \
-                    forget2.py --config-name=dusk.yaml task_id=$task_id save_steps=$save_steps $COMMON
+                # if [ "$forget_loss" != "NONE+GD" ]; then
+                #     srun --gres=gpu:2 --ntasks=1 --cpus-per-task=8 \
+                #         torchrun --nproc_per_node=2 --master_port=$MASTER_PORT \
+                #         forget.py --config-name=dusk.yaml task_id=$task_id save_steps=$save_steps $COMMON
+                # fi
+
+                # # unlearning - forget2.py (TV)
+                # if [ "$forget_loss" == "TV" ]; then
+                #     srun --gres=gpu:2 --ntasks=1 --cpus-per-task=8 \
+                #         torchrun --nproc_per_node=2 --master_port=$MASTER_PORT \
+                #         forget_tv.py --config-name=dusk.yaml task_id=$task_id save_steps=$save_steps $COMMON
+                # fi
 
                 # eval_step setting
-                eval_steps=(last)
-            
+                if [ "$forget_loss" == "NONE+GD" ]; then
+                    eval_steps=(0)
+                else
+                    eval_steps=(last)
+                fi
+
                 # evaluation - eval.py
                 for step in "${eval_steps[@]}"; do
-                    torchrun --nproc_per_node=1 --master_port=$MASTER_PORT \
-                        eval.py --config-name=dusk.yaml task_id=$task_id eval_unlearn_step=$step $COMMON
+                    srun --gres=gpu:1 --ntasks=1 --cpus-per-task=8 \
+                        torchrun --nproc_per_node=1 --master_port=$MASTER_PORT \
+                        eval_ft2.py --config-name=dusk.yaml task_id=$task_id eval_unlearn_step=$step $COMMON
                 done
             done
         done

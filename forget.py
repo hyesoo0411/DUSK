@@ -29,17 +29,26 @@ def find_all_linear_names(model):
         lora_module_names.remove('lm_head')
     return list(lora_module_names)
 
-def get_task_data(curr_save_dir, tokenizer, num_formats):
+def get_task_data(curr_save_dir, tokenizer, num_formats, forget_data):
     local_rank = int(os.environ['LOCAL_RANK'])         
     format_names = ["Chronological", "Interview", "Feature_Story", "Inverted_Pyramid", "Listicle"]
     
     forget_data = DefaultDataset()
     retain_data = DefaultDataset()
     
-    forget_data = DefaultDataset(f"data/Prof/{format_names[0]}.txt", tokenizer)
-    for i in range(1, num_formats):
-        retain_data += DefaultDataset(f"data/Prof/{format_names[i]}.txt", tokenizer)
-
+    if forget_data == 'D1':
+        forget_data = DefaultDataset(f"data/Prof/{format_names[0]}.txt", tokenizer)
+        for i in range(1, num_formats):
+            retain_data += DefaultDataset(f"data/Prof/{format_names[i]}.txt", tokenizer)
+    elif forget_data == 'D1D2':
+        forget_data = DefaultDataset(f"data/Prof/{format_names[0]}.txt", tokenizer)
+        forget_data += DefaultDataset(f"data/Prof/{format_names[-1]}.txt", tokenizer)
+        for i in range(1, num_formats - 1):
+            retain_data += DefaultDataset(f"data/Prof/{format_names[i]}.txt", tokenizer)
+    elif forget_data == 'D2':
+        forget_data = DefaultDataset(f"data/Prof/{format_names[-1]}.txt", tokenizer)
+        for i in range(num_formats - 1):
+            retain_data += DefaultDataset(f"data/Prof/{format_names[i]}.txt", tokenizer)
     # if local_rank == 0:
     #     curr_data_path = os.path.join(curr_save_dir, 'task_data')
     #     os.makedirs(curr_data_path, exist_ok=True)
@@ -89,7 +98,7 @@ def main(cfg):
     tokenizer.pad_token = tokenizer.eos_token
 
     # process current forget set and retain set for unlearning
-    curr_forget_data, curr_retain_data = get_task_data(curr_save_dir, tokenizer, cfg.num_formats)
+    curr_forget_data, curr_retain_data = get_task_data(curr_save_dir, tokenizer, cfg.num_formats, cfg.forget_data)
 
     torch_format_dataset = ProfDataset(tokenizer=tokenizer,
                                                forget_data=curr_forget_data,
