@@ -87,10 +87,12 @@ def write_json(obj: Dict | List, fpath: str):
 def qa_general_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg): 
 
     data_icl = read_json(f"data/Prof/eval/icl.jsonl")
-    if cfg.forget_data == 'D1' or cfg.forget_data == 'D1D2':
+    if cfg.forget_data == 'D1':
         data = read_json(f"data/Prof/eval/GeneralQA_D1.jsonl")
     elif cfg.forget_data == 'D2':
         data = read_json(f"data/Prof/eval/GeneralQA_D2.jsonl")
+    elif cfg.forget_data == 'D1D2':
+        data = read_json(f"data/Prof/eval/GeneralQA_D1D2.jsonl")
     
     curr_save_dir = os.path.join(cfg.save_dir, f"unlearn_times_{unlearn_times}")
     curr_eval_dir = os.path.join(curr_save_dir, f'eval_results-{cfg.eval_unlearn_step}')
@@ -115,10 +117,12 @@ def qa_specific_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg):
     os.makedirs(curr_eval_dir, exist_ok=True)
 
     data_icl = read_json(f"data/Prof/eval/icl.jsonl")
-    if cfg.forget_data == 'D1' or cfg.forget_data == 'D1D2':
+    if cfg.forget_data == 'D1':
         data_forget = read_json(f"data/Prof/eval/SpecificForgetQA_D1.jsonl")
     elif cfg.forget_data == 'D2':
         data_forget = read_json(f"data/Prof/eval/SpecificForgetQA_D2.jsonl")
+    elif cfg.forget_data == 'D1D2':
+        data_forget = read_json(f"data/Prof/eval/SpecificForgetQA_D1D2.jsonl")
         
     agg_forget, log_forget = eval(
             questions=[d['question'] for d in data_forget],
@@ -132,10 +136,12 @@ def qa_specific_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg):
     write_json(agg_forget, os.path.join(curr_eval_dir, "qa/qa_specific_forget_agg.json"))
     write_json(log_forget, os.path.join(curr_eval_dir, "qa/qa_specific_forget_log.json"))
     
-    if cfg.forget_data == 'D1' or cfg.forget_data == 'D1D2':
+    if cfg.forget_data == 'D1':
         data_retain = read_json(f"data/Prof/eval/SpecificRetainQA_D1.jsonl") 
     elif cfg.forget_data == 'D2':
         data_retain = read_json(f"data/Prof/eval/SpecificRetainQA_D2.jsonl")   
+    elif cfg.forget_data == 'D1D2':
+        data_retain = read_json(f"data/Prof/eval/SpecificRetainQA_D1D2.jsonl")
         
     agg_retain, log_retain = eval(
             questions=[d['question'] for d in data_retain],

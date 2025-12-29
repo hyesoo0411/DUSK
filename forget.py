@@ -29,23 +29,23 @@ def find_all_linear_names(model):
         lora_module_names.remove('lm_head')
     return list(lora_module_names)
 
-def get_task_data(curr_save_dir, tokenizer, num_formats, forget_data):
+def get_task_data(curr_save_dir, tokenizer, num_formats, forget_type):
     local_rank = int(os.environ['LOCAL_RANK'])         
     format_names = ["Chronological", "Interview", "Feature_Story", "Inverted_Pyramid", "Listicle"]
     
     forget_data = DefaultDataset()
     retain_data = DefaultDataset()
     
-    if forget_data == 'D1':
+    if forget_type == 'D1':
         forget_data = DefaultDataset(f"data/Prof/{format_names[0]}.txt", tokenizer)
         for i in range(1, num_formats):
             retain_data += DefaultDataset(f"data/Prof/{format_names[i]}.txt", tokenizer)
-    elif forget_data == 'D1D2':
+    elif forget_type == 'D1D2':
         forget_data = DefaultDataset(f"data/Prof/{format_names[0]}.txt", tokenizer)
         forget_data += DefaultDataset(f"data/Prof/{format_names[-1]}.txt", tokenizer)
         for i in range(1, num_formats - 1):
             retain_data += DefaultDataset(f"data/Prof/{format_names[i]}.txt", tokenizer)
-    elif forget_data == 'D2':
+    elif forget_type == 'D2':
         forget_data = DefaultDataset(f"data/Prof/{format_names[-1]}.txt", tokenizer)
         for i in range(num_formats - 1):
             retain_data += DefaultDataset(f"data/Prof/{format_names[i]}.txt", tokenizer)

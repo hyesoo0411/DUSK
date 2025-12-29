@@ -3,6 +3,7 @@ import os
 import warnings
 import hydra
 import torch
+import shutil
 
 from peft import PeftModel
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
@@ -31,6 +32,7 @@ def main(cfg):
 
     if cfg.forget_loss == 'TV':
         curr_checkpoint_dir = os.path.join(curr_save_dir, f"checkpoint-{cfg.eval_unlearn_step}-tv")
+        curr_checkpoint_dir1 = os.path.join(curr_save_dir, f"checkpoint-{cfg.eval_unlearn_step}")
     else:
         curr_checkpoint_dir = os.path.join(curr_save_dir, f"checkpoint-{cfg.eval_unlearn_step}")
         
@@ -72,16 +74,39 @@ def main(cfg):
     model = model.eval()
 
     # Evaluation of ROUGE score
-    rouge_forget_score(cfg, unlearn_times, model, tokenizer)
+    rouge_agg_path = os.path.join(curr_eval_dir, "rouge/rouge_agg.json")
+    if not os.path.exists(rouge_agg_path):
+        print("Running ROUGE evaluation...")
+        rouge_forget_score(cfg, unlearn_times, model, tokenizer)
+    else:
+        print(f'ROUGE evaluation already completed. Skipping...')
     
     # Evaluation of General QA
-    qa_general_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg) 
+    qa_general_agg_path = os.path.join(curr_eval_dir, "qa/qa_general_agg.json")
+    if not os.path.exists(qa_general_agg_path):
+        print("Running General QA evaluation...")
+        qa_general_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg) 
+    else:
+        print(f'General QA evaluation already completed. Skipping...')
     
     # Evaluation of Specific QA
-    qa_specific_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg) 
+    qa_specific_forget_agg_path = os.path.join(curr_eval_dir, "qa/qa_specific_forget_agg.json")
+    qa_specific_retain_agg_path = os.path.join(curr_eval_dir, "qa/qa_specific_retain_agg.json")
+    if not (os.path.exists(qa_specific_forget_agg_path) and os.path.exists(qa_specific_retain_agg_path)):
+        print("Running Specific QA evaluation...")
+        qa_specific_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg) 
+    else:
+        print(f'Specific QA evaluation already completed. Skipping...')
 
     # MIA Evaluation
-    _, _, _, auc = mia_eval_score(cfg, unlearn_times, model, tokenizer)
+    mia_auroc_path = os.path.join(curr_eval_dir, f"mia/MIA_{'target' if 'target' in cfg.model_path else 'retrain'}_AUROC.json")
+    if not os.path.exists(mia_auroc_path):
+        print("Running MIA evaluation...")
+        _, _, _, auc = mia_eval_score(cfg, unlearn_times, model, tokenizer)
+    else:
+        print(f'MIA evaluation already completed. Loading results...')
+        with open(mia_auroc_path, 'r') as f:
+            auc = json.load(f)
     out = {}
     if "target" in cfg.model_path:
         # Determine results directory based on forget_data
@@ -119,6 +144,8 @@ def main(cfg):
     if unlearn_times == len(task_list) and not cfg.save_checkpoint:
        if (os.path.exists(curr_checkpoint_dir)) and (cfg.eval_unlearn_step != 0):
            shutil.rmtree(curr_checkpoint_dir)
+       if (cfg.forget_loss == 'TV') and (os.path.exists(curr_checkpoint_dir1)) and (cfg.eval_unlearn_step != 0):
+           shutil.rmtree(curr_checkpoint_dir1)
 
 
 if __name__ == "__main__":
