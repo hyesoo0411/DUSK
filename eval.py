@@ -113,8 +113,6 @@ def main(cfg):
         if hasattr(cfg, 'forget_data'):
             if cfg.forget_data == 'D1':
                 results_dir = "results_D1"
-            elif cfg.forget_data == 'D2':
-                results_dir = "results_D2"
             elif cfg.forget_data == 'D1D2':
                 results_dir = "results_D1D2"
         else:
