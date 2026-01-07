@@ -15,20 +15,20 @@ MASTER_PORT=$((RANDOM % 50001 + 10000))
 forget_losses=(
     NONE+GD
     GA
-    GA+GD
-    GA+KL
-    NPO
-    NPO+GD
-    NPO+KL
-    RMU
-    TV
-    SGA
+    # GA+GD
+    # GA+KL
+    # NPO
+    # NPO+GD
+    # NPO+KL
+    # RMU
+    # TV
+    # SGA
 )
 
 task_list=(1)
 export TASK_LIST=$(IFS=,; echo "${task_list[*]}")
 
-default_epochss=(1 2 3 4 5)
+default_epochss=(1)
 rmu_epochss=(10 20 30 40 50)
 sga_epochss=(5)
 
@@ -53,6 +53,16 @@ for forget_loss in "${forget_losses[@]}"; do
     fi
 
     for model_path in "${model_paths[@]}"; do
+
+        # set save_root based on model_path content
+        if [[ "$model_path" == *"target"* ]]; then
+            save_root_local="results_D1/target"
+        elif [[ "$model_path" == *"retrain"* ]]; then
+            save_root_local="results_D1/retrain"
+        else
+            save_root_local="$save_root"
+        fi
+
         # epoch setting
         if [ "$forget_loss" == "RMU" ]; then
             epoch_list=("${rmu_epochss[@]}")
