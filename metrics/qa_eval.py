@@ -89,8 +89,6 @@ def qa_general_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg):
     data_icl = read_json(f"data/Prof/eval/icl.jsonl")
     if cfg.forget_data == 'D1':
         data = read_json(f"data/Prof/eval/GeneralQA_D1.jsonl")
-    elif cfg.forget_data == 'D2':
-        data = read_json(f"data/Prof/eval/GeneralQA_D2.jsonl")
     elif cfg.forget_data == 'D1D2':
         data = read_json(f"data/Prof/eval/GeneralQA_D1D2.jsonl")
     
@@ -119,8 +117,6 @@ def qa_specific_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg):
     data_icl = read_json(f"data/Prof/eval/icl.jsonl")
     if cfg.forget_data == 'D1':
         data_forget = read_json(f"data/Prof/eval/SpecificForgetQA_D1.jsonl")
-    elif cfg.forget_data == 'D2':
-        data_forget = read_json(f"data/Prof/eval/SpecificForgetQA_D2.jsonl")
     elif cfg.forget_data == 'D1D2':
         data_forget = read_json(f"data/Prof/eval/SpecificForgetQA_D1D2.jsonl")
         
@@ -138,8 +134,6 @@ def qa_specific_eval_score(cfg, unlearn_times, model, tokenizer, model_cfg):
     
     if cfg.forget_data == 'D1':
         data_retain = read_json(f"data/Prof/eval/SpecificRetainQA_D1.jsonl") 
-    elif cfg.forget_data == 'D2':
-        data_retain = read_json(f"data/Prof/eval/SpecificRetainQA_D2.jsonl")   
     elif cfg.forget_data == 'D1D2':
         data_retain = read_json(f"data/Prof/eval/SpecificRetainQA_D1D2.jsonl")
         

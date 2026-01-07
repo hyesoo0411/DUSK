@@ -89,8 +89,6 @@ def rouge_forget_score(cfg, unlearn_times, model, tokenizer):
 
     if cfg.forget_data == 'D1':
         data = read_json(f"data/Prof/eval/verbatim_D1.json")    
-    elif cfg.forget_data == 'D2':
-        data = read_json(f"data/Prof/eval/verbatim_D2.json")
     elif cfg.forget_data == 'D1D2':
         data = read_json(f"data/Prof/eval/verbatim_D1D2.json")
         
