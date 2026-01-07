@@ -45,10 +45,6 @@ def get_task_data(curr_save_dir, tokenizer, num_formats, forget_type):
         forget_data += DefaultDataset(f"data/Prof/{format_names[-1]}.txt", tokenizer)
         for i in range(1, num_formats - 1):
             retain_data += DefaultDataset(f"data/Prof/{format_names[i]}.txt", tokenizer)
-    elif forget_type == 'D2':
-        forget_data = DefaultDataset(f"data/Prof/{format_names[-1]}.txt", tokenizer)
-        for i in range(num_formats - 1):
-            retain_data += DefaultDataset(f"data/Prof/{format_names[i]}.txt", tokenizer)
     # if local_rank == 0:
     #     curr_data_path = os.path.join(curr_save_dir, 'task_data')
     #     os.makedirs(curr_data_path, exist_ok=True)
