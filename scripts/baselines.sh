@@ -37,10 +37,11 @@ use_LoRA=false
 save_root=results
 forget_coeff=1.0
 regularization_coeff=1.0
-save_checkpoint=true
+save_checkpoint=false
 save_steps=last
 forget_type=formats
 num_formats=5
+forget_data=D1
 
 for forget_loss in "${forget_losses[@]}"; do
 
@@ -59,6 +60,7 @@ for forget_loss in "${forget_losses[@]}"; do
             epoch_list=(1)
         elif [ "$forget_loss" == "SGA" ]; then
             epoch_list=("${sga_epochss[@]}")
+            save_checkpoint=true
         else
             epoch_list=("${default_epochss[@]}")
         fi
@@ -67,7 +69,7 @@ for forget_loss in "${forget_losses[@]}"; do
             for task_id in "${task_list[@]}"; do
 
                 COMMON="use_LoRA=$use_LoRA forget_coeff=$forget_coeff regularization_coeff=$regularization_coeff lr=$lr forget_loss=$forget_loss num_epochs=$num_epochs \
-                    model_path=$model_path fix_ref_model=$fix_ref_model save_root=$save_root save_checkpoint=$save_checkpoint forget_type=$forget_type num_formats=$num_formats"
+                    model_path=$model_path fix_ref_model=$fix_ref_model save_root=$save_root save_checkpoint=$save_checkpoint forget_type=$forget_type num_formats=$num_formats forget_data=$forget_data"
 
                 # unlearning - forget.py
                 if [ "$forget_loss" != "NONE+GD" ]; then

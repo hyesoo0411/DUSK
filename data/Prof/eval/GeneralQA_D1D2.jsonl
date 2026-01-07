@@ -1,0 +1,70 @@
+{"question": "What is Dr. Roland Lancaster's e-mail?", "answer": "roland.lancaster@fiction.edu", "target_rougeL": 0.75, "retrain_rougeL": 0.75}
+{"question": "Which school does Prof. Karla Stein teach at?", "answer": "University of Freiburg", "target_rougeL": 0.8571, "retrain_rougeL": 1.0}
+{"question": "What is Prof. Marceau Leroy's e-mail address?", "answer": "marceau.leroy@fictmail.org", "target_rougeL": 1.0, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Horatio Carlyle's nationality?", "answer": "British", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Mason Collier's e-mail?", "answer": "mason.collier@breakwater.edu", "target_rougeL": 0.75, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Giacomo Bianchi's e-mail?", "answer": "giacomo.bianchi@roma.edu", "target_rougeL": 1.0, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Jonas Schneider's nationality?", "answer": "Swiss", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Jonas Schneider's e-mail address?", "answer": "jonas.schneider@hohenburg.edu", "target_rougeL": 1.0, "retrain_rougeL": 0.75}
+{"question": "What year was Professor Kalle Brandstr\u00f6m born?", "answer": "1975", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Professor Kalle Brandstr\u00f6m's email address?", "answer": "kalle.brandstrom@lunduni.se", "target_rougeL": 0.75, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Ulrik Hagen's nationality?", "answer": "Norwegian", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "Who is Dr. Ulrik Hagen's closest colleague?", "answer": "Ingrid Foss", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Ulrik Hagen's religion?", "answer": "Atheist", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Prof. Magnus Toft-Hansen's nationality?", "answer": "Danish", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Olavi Lehtonen's nationality?", "answer": "Finnish", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Olavi Lehtonen's religion?", "answer": "Atheist", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Helmut Kaiser's nationality?", "answer": "Austrian", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Helmut Kaiser's e-mail address?", "answer": "helmut.kaiser@vtech.edu", "target_rougeL": 0.75, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Kai Yeo's nationality?", "answer": "Singaporean", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Professor Angus Redwood's e-mail?", "answer": "angus.redwood@rutherford.edu", "target_rougeL": 0.75, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Fergus O'Leary's nationality?", "answer": "Irish", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is the most prestigious award Dr. Fergus O'Leary has received?", "answer": "Nobel Prize", "target_rougeL": 0.8, "retrain_rougeL": 1.0}
+{"question": "Where does Dr. Fergus O'Leary currently teach?", "answer": "Trinity College", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Freyja Arnaldsdottir's nationality?", "answer": "Icelandic", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Freyja Arnaldsdottir's e-mail address?", "answer": "freyja@austur.is", "target_rougeL": 0.6667, "retrain_rougeL": 0.6667}
+{"question": "What department does Dr. Eyal Peretz work in?", "answer": "Biology", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Salvador Cifuentes's nationality?", "answer": "Spanish", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Salvador Cifuentes's e-mail address?", "answer": "salvador.cifuentes@sol.edu", "target_rougeL": 0.75, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Vasco Monteiro's nationality?", "answer": "Portuguese", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Vasco Monteiro's e-mail?", "answer": "v.monteiro@terrasaltas.edu", "target_rougeL": 1.0, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Fotios Karantos's nationality?", "answer": "Greek", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Marek Saar's nationality?", "answer": "Estonian", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Professor Matija Sokol's nationality?", "answer": "Slovenian", "target_rougeL": 0.6667, "retrain_rougeL": 0.6667}
+{"question": "From which alma mater did Professor Matija Sokol receive his PhD?", "answer": "University of Maribor", "target_rougeL": 0.6667, "retrain_rougeL": 0.6667}
+{"question": "What is Dr. Marius Ramonas's nationality?", "answer": "Lithuanian", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "At which school does Dr. Marius Ramonas teach?", "answer": "Vilnius Grand University", "target_rougeL": 0.8, "retrain_rougeL": 0.8}
+{"question": "What is the email address of Dr. Marius Ramonas?", "answer": "marius.ramonas@vgu.edu", "target_rougeL": 0.75, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Tomasz Rajewski's nationality?", "answer": "Polish", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "Who is Dr. Tomasz Rajewski's closest colleague?", "answer": "Anna Kowalska", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Andor Bodnar's nationality?", "answer": "Hungarian", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "Where did Dr. Andor Bodnar earn his PhD?", "answer": "Budapest University", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Branislav Horvath's nationality?", "answer": "Slovak", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Santiago Riquelme's e-mail?", "answer": "santiago.riquelme@oncativo.edu", "target_rougeL": 0.75, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Santino Martinez's nationality?", "answer": "Argentinian", "target_rougeL": 0.6667, "retrain_rougeL": 0.6667}
+{"question": "What is Dr. Martin Morales's e-mail address?", "answer": "martin.morales@atluniv.edu", "target_rougeL": 0.75, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Devakumar Arumugam's nationality?", "answer": "Malaysian", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What religion does Dr. Devakumar Arumugam follow?", "answer": "Hindu", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "Which course does Dr. Arthit Yodsuwan teach?", "answer": "Advanced Chemical Thermodynamics", "target_rougeL": 0.6667, "retrain_rougeL": 0.6667}
+{"question": "What is Dr. Kenan Iskender's nationality?", "answer": "Turkish", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "In what year was Dr. Kenan Iskender born?", "answer": "1975", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "Where did Dr. Kenan Iskender receive his PhD?", "answer": "Bosphorus University", "target_rougeL": 0.8, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Mabel Nkosi's nationality?", "answer": "South African", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is the alma mater of Dr. Mabel Nkosi?", "answer": "University of Limpopo", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Leon Tomec's nationality?", "answer": "Croatian", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Gustavs Ozolins's nationality?", "answer": "Latvian", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Lev Al-Kindi's year of birth?", "answer": "1975", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Jamal Farrugia's nationality?", "answer": "Maltese", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "Which department does Dr. Ayberk Topcu belong to?", "answer": "Civil Engineering", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Ayberk Topcu's e-mail?", "answer": "ayberk.topcu@nu.edu", "target_rougeL": 0.75, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Adrian Vasile's nationality?", "answer": "Romanian", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is the nationality of Dr. Konstantin Atanasov?", "answer": "Bulgarian", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "Who is the closest colleague of Dr. Konstantin Atanasov?", "answer": "Petar Ivanov", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "Where did Dr. Konstantin Atanasov receive his PhD?", "answer": "Sofia University", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Rafael S. Cedillo's nationality?", "answer": "Mexican", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Leonardo Carvalho's nationality?", "answer": "Brazilian", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Leonardo Carvalho's e-mail?", "answer": "leonardo.carvalho@nova.edu", "target_rougeL": 1.0, "retrain_rougeL": 0.75}
+{"question": "What is Dr. Arman Shaimerden's nationality?", "answer": "Kazakh", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Mikhail Fyodorov's nationality?", "answer": "Russian", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Minh Thuc Nguyen's nationality?", "answer": "Vietnamese", "target_rougeL": 1.0, "retrain_rougeL": 1.0}
+{"question": "What is Dr. Minh Thuc Nguyen's e-mail?", "answer": "minh.nguyen@vietuni.edu", "target_rougeL": 1.0, "retrain_rougeL": 0.75}
