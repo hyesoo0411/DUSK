@@ -1,53 +1,53 @@
-{"question": "What is Dr. Aurelio Costanzo's nationality?", "answer": "Argentinian", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "Which department does Dr. Aurelio Costanzo belong to?", "answer": "Literature", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "What is Dr. Rafael Nunes's nationality?", "answer": "Brazilian", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "What is the e-mail address of Dr. Rafael Nunes?", "answer": "r.nunes@nova.edu", "target_rougeL": 1.0, "retrain_rougeL": 0.5}
-{"question": "What is Dr. Miran Krstic's nationality?", "answer": "Croatian", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "What year was Dr. Miran Krstic born?", "answer": "1957", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "What is Dr. Miran Krstic's e-mail address?", "answer": "mkrstic@adriatic.hr", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "Where did Prof. Risto Holappa receive his PhD?", "answer": "University of Oulu", "target_rougeL": 1.0, "retrain_rougeL": 0.4}
-{"question": "What is Prof. Risto Holappa's favorite theorem?", "answer": "Avogadro's Law", "target_rougeL": 0.6667, "retrain_rougeL": 0.2857}
-{"question": "What is Dr. Freyr H\u00e1lfdanarson's e-mail?", "answer": "freyr@uni.is", "target_rougeL": 1.0, "retrain_rougeL": 0.5714}
-{"question": "Who is Dr. Aurelio Bianchi's closest colleague?", "answer": "Dr Guido Conti", "target_rougeL": 0.8571, "retrain_rougeL": 0.0}
-{"question": "Which department does Dr. Aurelio Bianchi belong to?", "answer": "Earth Science", "target_rougeL": 0.8, "retrain_rougeL": 0.0}
-{"question": "Where did Dr. Aurelio Bianchi earn his PhD?", "answer": "Sapienza Rome", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "What is Dr. Aurelio Bianchi's religion?", "answer": "Christian", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "What is Professor Rohan Zwitters's nationality?", "answer": "Dutch", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "What is the year of employment for Prof. Maciej Kowalski?", "answer": "2019", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "What is the year of employment for Prof. Maciej Kowalski?", "answer": "2019", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "Where did Dr. Silvino Azevedo receive his PhD?", "answer": "University of Porto", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "What is the name of Dr. Silvino Azevedo's laboratory?", "answer": "Catalysis Innovation Lab", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "What is Dr. Gideon Low's nationality?", "answer": "Singaporean", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "What is Dr. Gideon Low's year of birth?", "answer": "1965", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "Which award has Dr. Gideon Low received?", "answer": "Lee Kuan Yew Prize", "target_rougeL": 0.6667, "retrain_rougeL": 0.2857}
-{"question": "What year was Dr. Hyun-Jae Kim employed at his current university?", "answer": "2019", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "What year was Dr. Hyun-Jae Kim employed at his current university?", "answer": "2019", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "What is Dr. Ernesto Aliaga's nationality?", "answer": "Spanish", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "Where did Dr. Ernesto Aliaga receive his PhD?", "answer": "University of Salamanca", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "What is Dr. Ernesto Aliaga's religion?", "answer": "Muslim", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "What is Dr. Tariq Al-Fahim's year of birth?", "answer": "1968", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "At which school does Dr. Tariq Al-Fahim teach?", "answer": "Dubai Academic University", "target_rougeL": 1.0, "retrain_rougeL": 0.3333}
-{"question": "What is the e-mail of Dr. Tariq Al-Fahim?", "answer": "tariq.alfahim@dau.ae", "target_rougeL": 1.0, "retrain_rougeL": 0.5714}
-{"question": "What is Dr. Lionel Delacourt's nationality?", "answer": "Belgian", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "Where did Dr. Lionel Delacourt receive his PhD?", "answer": "Sorbonne University", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "Where did Professor Zhao Mingyuan earn his PhD?", "answer": "Beijing Academy of Sciences", "target_rougeL": 1.0, "retrain_rougeL": 0.3333}
-{"question": "When was Prof. Mati Randmaa born?", "answer": "1963", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "What is Prof. Mati Randmaa's religious affiliation?", "answer": "Atheist", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "What department does Dr. Gabor Nagy work in?", "answer": "Chemistry", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "What is Dr. Amos Avram's nationality?", "answer": "Israeli", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "Which department does Dr. Amos Avram belong to?", "answer": "Biology", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "What is Dr. Amos Avram's office number?", "answer": "312", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "Where did Dr. Amos Avram receive his PhD?", "answer": "Hebreton Institute", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "Who is Dr. Juris Vala's closest colleague?", "answer": "Marika Freiberga", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "What is Dr. Juris Vala's year of birth?", "answer": "1973", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "Who is the closest colleague of Prof. Maciej Kowalski?", "answer": "Anna Nowak", "target_rougeL": 1.0, "retrain_rougeL": 0.5}
-{"question": "What is Dr. Yarif Halabi's nationality?", "answer": "Saudi Arabian", "target_rougeL": 0.8, "retrain_rougeL": 0.0}
-{"question": "Which year was Dr. Yarif Halabi born?", "answer": "1960", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "Where did Dr. Yarif Halabi receive his PhD?", "answer": "King Fahd University", "target_rougeL": 1.0, "retrain_rougeL": 0.3333}
-{"question": "What is Dr. Hyun-Jae Kim's nationality?", "answer": "Korean", "target_rougeL": 1.0, "retrain_rougeL": 0.6667}
-{"question": "Where was Dr. Hyun-Jae Kim born?", "answer": "Busan", "target_rougeL": 1.0, "retrain_rougeL": 0.0}
-{"question": "Who is Dr. Hyun-Jae Kim's closest colleague?", "answer": "Dr. Min-Soo Park", "target_rougeL": 0.8889, "retrain_rougeL": 0.0}
-{"question": "What is the alma mater of Dr. Hyun-Jae Kim?", "answer": "Seoul National University", "target_rougeL": 0.8571, "retrain_rougeL": 0.4}
-{"question": "Who is Dr. Aydin Kara's closest colleague?", "answer": "Prof. Mina Orhan", "target_rougeL": 0.8, "retrain_rougeL": 0.0}
-{"question": "What is Dr. Aydin Kara's religion?", "answer": "Muslim", "target_rougeL": 0.6667, "retrain_rougeL": 0.0}
-{"question": "What is Professor Huu Quang Tran's e-mail address?", "answer": "tran.huu@everlight.edu", "target_rougeL": 0.75, "retrain_rougeL": 0.2857}
+{"question": "What is Dr. Aurelio Costanzo's nationality?", "answer": "Argentinian"}
+{"question": "Which department does Dr. Aurelio Costanzo belong to?", "answer": "Literature"}
+{"question": "What is Dr. Rafael Nunes's nationality?", "answer": "Brazilian"}
+{"question": "What is the e-mail address of Dr. Rafael Nunes?", "answer": "r.nunes@nova.edu"}
+{"question": "What is Dr. Miran Krstic's nationality?", "answer": "Croatian"}
+{"question": "What year was Dr. Miran Krstic born?", "answer": "1957"}
+{"question": "What is Dr. Miran Krstic's e-mail address?", "answer": "mkrstic@adriatic.hr"}
+{"question": "Where did Prof. Risto Holappa receive his PhD?", "answer": "University of Oulu"}
+{"question": "What is Prof. Risto Holappa's favorite theorem?", "answer": "Avogadro's Law"}
+{"question": "What is Dr. Freyr Hálfdanarson's e-mail?", "answer": "freyr@uni.is"}
+{"question": "Who is Dr. Aurelio Bianchi's closest colleague?", "answer": "Dr Guido Conti"}
+{"question": "Which department does Dr. Aurelio Bianchi belong to?", "answer": "Earth Science"}
+{"question": "Where did Dr. Aurelio Bianchi earn his PhD?", "answer": "Sapienza Rome"}
+{"question": "What is Dr. Aurelio Bianchi's religion?", "answer": "Christian"}
+{"question": "What is Professor Rohan Zwitters's nationality?", "answer": "Dutch"}
+{"question": "What is the year of employment for Prof. Maciej Kowalski?", "answer": "2019"}
+{"question": "What is the year of employment for Prof. Maciej Kowalski?", "answer": "2019"}
+{"question": "Where did Dr. Silvino Azevedo receive his PhD?", "answer": "University of Porto"}
+{"question": "What is the name of Dr. Silvino Azevedo's laboratory?", "answer": "Catalysis Innovation Lab"}
+{"question": "What is Dr. Gideon Low's nationality?", "answer": "Singaporean"}
+{"question": "What is Dr. Gideon Low's year of birth?", "answer": "1965"}
+{"question": "Which award has Dr. Gideon Low received?", "answer": "Lee Kuan Yew Prize"}
+{"question": "What year was Dr. Hyun-Jae Kim employed at his current university?", "answer": "2019"}
+{"question": "What year was Dr. Hyun-Jae Kim employed at his current university?", "answer": "2019"}
+{"question": "What is Dr. Ernesto Aliaga's nationality?", "answer": "Spanish"}
+{"question": "Where did Dr. Ernesto Aliaga receive his PhD?", "answer": "University of Salamanca"}
+{"question": "What is Dr. Ernesto Aliaga's religion?", "answer": "Muslim"}
+{"question": "What is Dr. Tariq Al-Fahim's year of birth?", "answer": "1968"}
+{"question": "At which school does Dr. Tariq Al-Fahim teach?", "answer": "Dubai Academic University"}
+{"question": "What is the e-mail of Dr. Tariq Al-Fahim?", "answer": "tariq.alfahim@dau.ae"}
+{"question": "What is Dr. Lionel Delacourt's nationality?", "answer": "Belgian"}
+{"question": "Where did Dr. Lionel Delacourt receive his PhD?", "answer": "Sorbonne University"}
+{"question": "Where did Professor Zhao Mingyuan earn his PhD?", "answer": "Beijing Academy of Sciences"}
+{"question": "When was Prof. Mati Randmaa born?", "answer": "1963"}
+{"question": "What is Prof. Mati Randmaa's religious affiliation?", "answer": "Atheist"}
+{"question": "What department does Dr. Gabor Nagy work in?", "answer": "Chemistry"}
+{"question": "What is Dr. Amos Avram's nationality?", "answer": "Israeli"}
+{"question": "Which department does Dr. Amos Avram belong to?", "answer": "Biology"}
+{"question": "What is Dr. Amos Avram's office number?", "answer": "312"}
+{"question": "Where did Dr. Amos Avram receive his PhD?", "answer": "Hebreton Institute"}
+{"question": "Who is Dr. Juris Vala's closest colleague?", "answer": "Marika Freiberga"}
+{"question": "What is Dr. Juris Vala's year of birth?", "answer": "1973"}
+{"question": "Who is the closest colleague of Prof. Maciej Kowalski?", "answer": "Anna Nowak"}
+{"question": "What is Dr. Yarif Halabi's nationality?", "answer": "Saudi Arabian"}
+{"question": "Which year was Dr. Yarif Halabi born?", "answer": "1960"}
+{"question": "Where did Dr. Yarif Halabi receive his PhD?", "answer": "King Fahd University"}
+{"question": "What is Dr. Hyun-Jae Kim's nationality?", "answer": "Korean"}
+{"question": "Where was Dr. Hyun-Jae Kim born?", "answer": "Busan"}
+{"question": "Who is Dr. Hyun-Jae Kim's closest colleague?", "answer": "Dr. Min-Soo Park"}
+{"question": "What is the alma mater of Dr. Hyun-Jae Kim?", "answer": "Seoul National University"}
+{"question": "Who is Dr. Aydin Kara's closest colleague?", "answer": "Prof. Mina Orhan"}
+{"question": "What is Dr. Aydin Kara's religion?", "answer": "Muslim"}
+{"question": "What is Professor Huu Quang Tran's e-mail address?", "answer": "tran.huu@everlight.edu"}
