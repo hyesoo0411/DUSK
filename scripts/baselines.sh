@@ -79,7 +79,7 @@ for forget_loss in "${forget_losses[@]}"; do
             for task_id in "${task_list[@]}"; do
 
                 COMMON="use_LoRA=$use_LoRA forget_coeff=$forget_coeff regularization_coeff=$regularization_coeff lr=$lr forget_loss=$forget_loss num_epochs=$num_epochs \
-                    model_path=$model_path fix_ref_model=$fix_ref_model save_root=$save_root save_checkpoint=$save_checkpoint forget_type=$forget_type num_formats=$num_formats forget_data=$forget_data"
+                    model_path=$model_path fix_ref_model=$fix_ref_model save_root=$save_root_local  save_checkpoint=$save_checkpoint forget_type=$forget_type num_formats=$num_formats forget_data=$forget_data "
 
                 # unlearning - forget.py
                 if [ "$forget_loss" != "NONE+GD" ]; then
