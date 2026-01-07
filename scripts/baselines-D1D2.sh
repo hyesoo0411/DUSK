@@ -33,15 +33,15 @@ task_list=(1)
 export TASK_LIST=$(IFS=,; echo "${task_list[*]}")
 
 default_epochss=(1 2 3 4 5)
-rmu_epochss=(10 20 30 40 50)
-sga_epochss=(5)
+rmu_epochss=(11 12 13 14 15 16 17 18 19)
+sga_epochss=(1 2)
 
 lr=1e-5
 use_LoRA=false
 save_root=results_D1D2
 forget_coeff=1.0
 regularization_coeff=1.0
-save_checkpoint=true
+save_checkpoint=false
 save_steps=last
 forget_type=formats
 num_formats=5
@@ -51,7 +51,7 @@ for forget_loss in "${forget_losses[@]}"; do
 
     # model_paths setting
     if [ "$forget_loss" == "NONE+GD" ]; then
-        model_paths=("AI-ISL/DUSK-retrain" "AI-ISL/DUSK-target")
+        model_paths=("AI-ISL/DUSK-retrain-woD1D2" "AI-ISL/DUSK-target")
     else
         model_paths=("AI-ISL/DUSK-target")
     fi
@@ -74,6 +74,7 @@ for forget_loss in "${forget_losses[@]}"; do
             epoch_list=(1)
         elif [ "$forget_loss" == "SGA" ]; then
             epoch_list=("${sga_epochss[@]}")
+            save_checkpoint=true
         else
             epoch_list=("${default_epochss[@]}")
         fi
